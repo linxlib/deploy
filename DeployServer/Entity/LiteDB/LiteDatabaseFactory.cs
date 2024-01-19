@@ -1,0 +1,62 @@
+﻿using LiteDB;
+using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace Entity.LiteDB
+{
+    /// <summary>
+    /// Provides a factory object for creating a <c>LiteDatabase</c> instance.
+    /// </summary>
+    /// <seealso cref="ILiteDatabaseFactory" />
+    internal class LiteDatabaseFactory : ILiteDatabaseFactory
+    {
+        private readonly LiteDatabaseServiceOptions options;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="LiteDatabaseFactory"/> class.
+        /// </summary>
+        /// <param name="options">The <see cref="IOptions{LiteDatabaseServiceOptions}"/> instance used to initialize the <see cref="LiteDatabase"/>.</param>
+        /// <exception cref="ArgumentNullException">options</exception>
+        public LiteDatabaseFactory(IOptions<LiteDatabaseServiceOptions> options)
+        {
+            this.options = options.Value ?? throw new ArgumentNullException(nameof(options));
+        }
+
+        /// <inheritdoc/>
+        /// <exception cref="System.ArgumentNullException">LiteDB.Database connection string is invalid. - Filename</exception>
+        public LiteDatabase Create()
+        {
+            if (string.IsNullOrEmpty(options.ConnectionString.Filename))
+                throw new ArgumentNullException("LiteDB.Database connection string is invalid.", nameof(ConnectionString.Filename));
+
+            options.Logger?.LogInformation($"Using database {options.ConnectionString.Filename}");
+            var database = new LiteDatabase(options.ConnectionString, options.Mapper);
+
+            if (options.DatabasePatches.Any())
+            {
+                try
+                {
+                    foreach (var item in options.DatabasePatches)
+                    {
+                        item.Invoke(database);
+                    }
+                    database.Commit();
+                }
+                catch (Exception e)
+                {
+                    database.Rollback();
+                    throw new LiteException(e.HResult, e.Message);
+                }
+
+            }
+
+
+            return database;
+
+        }
+    }
+}

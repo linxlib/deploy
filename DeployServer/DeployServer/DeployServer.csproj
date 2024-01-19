@@ -1,0 +1,32 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+  </PropertyGroup>
+
+
+
+  <ItemGroup>
+    <None Remove="deploy-log.db" />
+    <None Remove="deploy.db" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AsyncFriendlyStackTrace" Version="1.6.0" />
+    <PackageReference Include="JWT" Version="10.0.2" />
+    <PackageReference Include="LiteDB" Version="5.0.16" />
+    <PackageReference Include="Masuit.Tools.Core" Version="2.5.9.9" />
+    <PackageReference Include="Microsoft.Web.Administration" Version="11.1.0" />
+    <PackageReference Include="WebSocketManager" Version="1.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Entity\Entity.csproj" />
+    <ProjectReference Include="..\Ext\Ext.csproj" />
+    <ProjectReference Include="..\Linx\Linx.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,13 @@
+[
+  {
+    "AutoLogin": false,
+    "BaseApi": "http://124.223.93.57:5000/api",
+    "LastDeployPath": "",
+    "LastDeployType": "",
+    "LoginToken": "",
+    "MainSelectedService": "",
+    "Password": "admin",
+    "SettingSelectedService": "",
+    "User": "admin"
+  }
+]

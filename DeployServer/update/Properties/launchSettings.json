@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "update": {
+      "commandName": "Project",
+      "commandLineArgs": "1 DeployClient.exe http://124.223.93.57:5000/api/Version/DownloadUpdate?id=777beb86-9ae2-4135-8425-0aa1e6504629"
+    }
+  }
+}

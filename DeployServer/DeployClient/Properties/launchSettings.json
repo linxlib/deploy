@@ -1,0 +1,13 @@
+{
+  "profiles": {
+    "DeployClient": {
+      "commandName": "Project",
+      "commandLineArgs": "deploy://http://127.0.0.1:5000/",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "https://localhost:59365;http://localhost:59366"
+    }
+  }
+}
