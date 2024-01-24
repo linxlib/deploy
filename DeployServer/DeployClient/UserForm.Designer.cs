@@ -263,6 +263,8 @@
             // UserForm
             // 
             AutoScaleMode = AutoScaleMode.None;
+            AutoSize = true;
+            AutoSizeMode = AutoSizeMode.GrowAndShrink;
             ClientSize = new Size(1003, 372);
             Controls.Add(checkBox1);
             Controls.Add(button5);

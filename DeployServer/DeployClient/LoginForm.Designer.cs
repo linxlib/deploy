@@ -157,6 +157,8 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
+            AutoSize = true;
+            AutoSizeMode = AutoSizeMode.GrowAndShrink;
             ClientSize = new Size(629, 320);
             Controls.Add(linkLabel2);
             Controls.Add(linkLabel1);
@@ -174,7 +176,6 @@
             ShowIcon = false;
             StartPosition = FormStartPosition.CenterScreen;
             Text = "登录";
-            TransparencyKey = Color.Transparent;
             Shown += LoginForm_Shown;
             ResumeLayout(false);
             PerformLayout();

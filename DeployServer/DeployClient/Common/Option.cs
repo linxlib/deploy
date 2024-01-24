@@ -21,7 +21,26 @@ namespace DeployClient.Common
             {
                 this.filename = filename;
             }
+          
             var jsonfile = AppDomain.CurrentDomain.BaseDirectory + "/" + this.filename;
+            if (!File.Exists(jsonfile))
+            {
+                var o = new Option
+                {
+                    BaseApi = "http://124.223.93.57:5000/api",
+                    AutoLogin = false,
+                    User = "",
+                    Password = "",
+                    LastDeployPath = "",
+                    LastDeployType = "",
+                    LoginToken = "",
+                    MainSelectedService = "",
+                    SettingSelectedService = ""
+                };
+                var list = new Options { o };
+                var aa =JsonConvert.SerializeObject(list);
+                File.WriteAllText(jsonfile, aa );
+            }
             var data = File.ReadAllText(jsonfile);
             options = JsonConvert.DeserializeObject<Options>(data);
             currentUrl = FirstUrl();

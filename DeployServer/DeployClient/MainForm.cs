@@ -378,14 +378,11 @@ namespace DeployClient
 ";
                     throw new Exception(res);
                 }
-
-
-
-                File.Delete(tmpZip);
-                button2.Text = "²¿Êð";
-                button2.Enabled = true;
             }
 
+            File.Delete(tmpZip);
+            button2.Text = "²¿Êð";
+            button2.Enabled = true;
         }
 
         private void serviceBindingSource_CurrentChanged(object sender, EventArgs e)

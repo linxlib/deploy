@@ -39,7 +39,7 @@ namespace update
             }
       
 
-            ServiceExtensions.CopyDir(filePath, AppDomain.CurrentDomain.BaseDirectory);
+            ZipHelper.CopyDir(filePath, AppDomain.CurrentDomain.BaseDirectory);
             await Console.Out.WriteLineAsync("更新完成, 启动程序");
             Directory.Delete(filePath, true);
             var p = new Process();

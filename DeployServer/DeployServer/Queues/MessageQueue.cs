@@ -1,4 +1,4 @@
-﻿using System.Collections.Concurrent;
+﻿using Masuit.Tools.Systems;
 
 namespace DeployServer.Queues
 {
@@ -18,10 +18,10 @@ namespace DeployServer.Queues
     /// </summary>
     public class MessageQueue<TClientID, TMsgType, TMsg>: IMessageQueue<TClientID, TMsgType, TMsg>
     {
-        private ConcurrentBag<QueueMessage<TClientID, TMsgType, TMsg>> queueMessages;
+        private ConcurrentHashSet<QueueMessage<TClientID, TMsgType, TMsg>> queueMessages;
         public MessageQueue()
         {
-            queueMessages = new ConcurrentBag<QueueMessage<TClientID, TMsgType, TMsg>>();
+            queueMessages = new ConcurrentHashSet<QueueMessage<TClientID, TMsgType, TMsg>>();
         }
         /// <summary>
         /// 入栈
@@ -35,6 +35,10 @@ namespace DeployServer.Queues
         public async Task<QueueMessage<TClientID, TMsgType, TMsg>?> DeQueue(TClientID clientId,TMsgType msgType)
         {
             var msg = queueMessages.Where(e=>e.msgType.Equals(msgType) &&e.clientId.Equals(clientId)).FirstOrDefault();
+            if (msg!=null)
+            {
+                queueMessages.Remove(msg);
+            }
             return msg;
         }
 

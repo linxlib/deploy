@@ -183,7 +183,18 @@ namespace Ext
                         var appPool = manager.ApplicationPools.Where(e => e.Name.Equals(service.ServiceName)).FirstOrDefault();
                         if (appPool!=null)
                         {
+                            Process process = null;
+                            if (appPool.WorkerProcesses.Count > 0)
+                            {
+                                process = Process.GetProcessById(appPool.WorkerProcesses[0].ProcessId);
+                            }
                             appPool.Recycle();
+                            if (process != null)
+                            {
+                                while (!process.HasExited)
+                                    Thread.Sleep(0);
+                                process.Dispose();
+                            }
                         }
                         return s == ObjectState.Stopped;
                     }

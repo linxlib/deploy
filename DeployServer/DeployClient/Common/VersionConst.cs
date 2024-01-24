@@ -8,6 +8,6 @@ namespace DeployClient.Common
 {
     public class VersionConst
     {
-        public const int VersionInt = 11;
+        public const int VersionInt = 14;
     }
 }

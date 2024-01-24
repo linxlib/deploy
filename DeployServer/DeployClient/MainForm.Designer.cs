@@ -397,10 +397,10 @@
             // button2
             // 
             button2.Font = new Font("Microsoft YaHei UI", 10.5F, FontStyle.Regular, GraphicsUnit.Point);
-            button2.Location = new Point(269, 477);
+            button2.Location = new Point(274, 477);
             button2.Margin = new Padding(5, 4, 5, 4);
             button2.Name = "button2";
-            button2.Size = new Size(280, 97);
+            button2.Size = new Size(273, 123);
             button2.TabIndex = 9;
             button2.Text = "部署";
             button2.UseVisualStyleBackColor = true;
@@ -559,9 +559,9 @@
             // 
             // button6
             // 
-            button6.Location = new Point(733, 569);
+            button6.Location = new Point(725, 569);
             button6.Name = "button6";
-            button6.Size = new Size(75, 23);
+            button6.Size = new Size(112, 31);
             button6.TabIndex = 18;
             button6.Text = "button6";
             button6.UseVisualStyleBackColor = true;

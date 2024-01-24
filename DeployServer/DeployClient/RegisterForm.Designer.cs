@@ -42,65 +42,58 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(66, 37);
-            label1.Margin = new Padding(5, 0, 5, 0);
+            label1.Location = new Point(42, 26);
             label1.Name = "label1";
-            label1.Size = new Size(64, 24);
+            label1.Size = new Size(44, 17);
             label1.TabIndex = 0;
             label1.Text = "用户名";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(85, 95);
-            label2.Margin = new Padding(5, 0, 5, 0);
+            label2.Location = new Point(54, 67);
             label2.Name = "label2";
-            label2.Size = new Size(46, 24);
+            label2.Size = new Size(32, 17);
             label2.TabIndex = 1;
             label2.Text = "邮箱";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(85, 152);
-            label3.Margin = new Padding(5, 0, 5, 0);
+            label3.Location = new Point(54, 108);
             label3.Name = "label3";
-            label3.Size = new Size(46, 24);
+            label3.Size = new Size(32, 17);
             label3.TabIndex = 2;
             label3.Text = "密码";
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(145, 32);
-            textBox1.Margin = new Padding(5, 4, 5, 4);
+            textBox1.Location = new Point(92, 23);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(266, 30);
+            textBox1.Size = new Size(171, 23);
             textBox1.TabIndex = 1;
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(145, 90);
-            textBox2.Margin = new Padding(5, 4, 5, 4);
+            textBox2.Location = new Point(92, 64);
             textBox2.Name = "textBox2";
-            textBox2.Size = new Size(266, 30);
+            textBox2.Size = new Size(171, 23);
             textBox2.TabIndex = 2;
             // 
             // textBox3
             // 
-            textBox3.Location = new Point(145, 148);
-            textBox3.Margin = new Padding(5, 4, 5, 4);
+            textBox3.Location = new Point(92, 105);
             textBox3.Name = "textBox3";
             textBox3.PasswordChar = '*';
-            textBox3.Size = new Size(266, 30);
+            textBox3.Size = new Size(171, 23);
             textBox3.TabIndex = 3;
             textBox3.UseSystemPasswordChar = true;
             // 
             // button1
             // 
-            button1.Location = new Point(181, 264);
-            button1.Margin = new Padding(5, 4, 5, 4);
+            button1.Location = new Point(115, 187);
             button1.Name = "button1";
-            button1.Size = new Size(182, 49);
+            button1.Size = new Size(116, 35);
             button1.TabIndex = 6;
             button1.Text = "注册";
             button1.UseVisualStyleBackColor = true;
@@ -108,29 +101,29 @@
             // 
             // textBox4
             // 
-            textBox4.Location = new Point(145, 202);
-            textBox4.Margin = new Padding(5, 4, 5, 4);
+            textBox4.Location = new Point(92, 143);
             textBox4.Name = "textBox4";
             textBox4.PasswordChar = '*';
-            textBox4.Size = new Size(266, 30);
+            textBox4.Size = new Size(171, 23);
             textBox4.TabIndex = 4;
             textBox4.UseSystemPasswordChar = true;
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(50, 206);
-            label4.Margin = new Padding(5, 0, 5, 0);
+            label4.Location = new Point(32, 146);
             label4.Name = "label4";
-            label4.Size = new Size(82, 24);
+            label4.Size = new Size(56, 17);
             label4.TabIndex = 7;
             label4.Text = "再次密码";
             // 
             // RegisterForm
             // 
-            AutoScaleDimensions = new SizeF(11F, 24F);
+            AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(487, 344);
+            AutoSize = true;
+            AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            ClientSize = new Size(310, 244);
             Controls.Add(textBox4);
             Controls.Add(label4);
             Controls.Add(button1);
@@ -140,7 +133,6 @@
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
-            Margin = new Padding(5, 4, 5, 4);
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "RegisterForm";

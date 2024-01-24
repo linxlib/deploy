@@ -317,6 +317,8 @@
             // ServerForm
             // 
             AutoScaleMode = AutoScaleMode.None;
+            AutoSize = true;
+            AutoSizeMode = AutoSizeMode.GrowAndShrink;
             ClientSize = new Size(1186, 397);
             Controls.Add(button7);
             Controls.Add(button8);

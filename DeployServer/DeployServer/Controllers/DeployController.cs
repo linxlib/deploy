@@ -4,7 +4,6 @@ using Ext;
 using LiteDB;
 using Masuit.Tools.Files;
 using Microsoft.AspNetCore.Mvc;
-using System.Text;
 
 namespace DeployServer.Controllers
 {
@@ -63,7 +62,7 @@ namespace DeployServer.Controllers
                 stream.Seek(0, SeekOrigin.Begin);
                 stream.UnZip(tmpEx);
                 Console.WriteLine(service.Stop());
-                Thread.Sleep(3000);
+                Thread.Sleep(1000);
                 if (!service.OverwriteFrom(tmpEx))
                 {
                     Console.WriteLine($"文件覆盖失败:{tmpEx}");
